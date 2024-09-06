@@ -6,6 +6,7 @@ function Board(props) {
     const [player, setPlayer] = useState("X");
 
     const checkWin = (theCells) => {
+        //all the winning conditions based on the indexes (or the keys) of cells 
         const winCases = [
             [0, 4, 8], [2, 4, 6], //Diagonal
             [0, 1, 2], [3, 4, 5], [6, 7, 8], //Horizontal
@@ -13,6 +14,7 @@ function Board(props) {
         ];
         for(let winCase of winCases){
             const [a, b, c] = winCase;
+            //checks the winning conditions, calls the win and clears the board
             if (theCells[a] !== " " && theCells[a] === theCells[b] && theCells[a] === theCells[c]){
                 props.playerWon(theCells[a]);
                 setTimeout(() => {
@@ -20,6 +22,7 @@ function Board(props) {
                     setPlayer("X")
                 }, 1000);
             }
+            //does the same with a draw condition
             if (theCells.every(cell => cell !== " ")){
                 props.playerWon("draw");
                 setTimeout(() => {
@@ -30,17 +33,17 @@ function Board(props) {
         }
 
     }
+    //called from the Cell component to handle the click
     const handleClick = (index) => {
         if(cells[index] === " "){
             const newCells = cells.slice();
             newCells[index] = player;
             setCells(newCells);
+            //switches player
             setPlayer(player === "X" ? "O" : "X")
+            //calls the win (uses the local newCells to avoid any bugs caused by the synchronization of js)
             checkWin(newCells)
         }
-        
-
-        
     }
   return (
     <div className='board'>

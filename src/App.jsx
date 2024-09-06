@@ -5,6 +5,7 @@ function App() {
   const [title,setTitle] = useState("Tic-Tac-Toe Game");
   const [subtitle, setSubtitle] = useState("Whoever goes first gets X!");
   const [color,setColor] = useState("white");
+  //simply modifies the title and the subtitle acccording to the data passed up from the Board component.
   const playerWon = (winner) => {
     if(winner === "X"){
       setColor("blue");
