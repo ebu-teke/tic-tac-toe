@@ -9,9 +9,12 @@ function App() {
     if(winner === "X"){
       setColor("blue");
       setTitle("X won this round. Crushin' you, O!")
-    }else{
+    }else if (winner==="O"){
       setColor("red");
       setTitle("O won this round. Cry me a river, X!")
+    }else{
+      setColor("green")
+      setTitle("None of you were smart enough to win!")
     }
     setSubtitle("Prepare for the next round. Whoever goes first is X!")
   }

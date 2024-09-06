@@ -15,7 +15,17 @@ function Board(props) {
             const [a, b, c] = winCase;
             if (theCells[a] !== " " && theCells[a] === theCells[b] && theCells[a] === theCells[c]){
                 props.playerWon(theCells[a]);
-                setCells(Array(9).fill(" "));
+                setTimeout(() => {
+                    setCells(Array(9).fill(" "));
+                    setPlayer("X")
+                }, 500);
+            }
+            if (theCells.every(cell => cell !== " ")){
+                props.playerWon("draw");
+                setTimeout(() => {
+                    setCells(Array(9).fill(" "));
+                    setPlayer("X")
+                }, 500);
             }
         }
 

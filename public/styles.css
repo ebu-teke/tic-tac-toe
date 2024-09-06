@@ -30,4 +30,8 @@ body{
 .board div{
     color: white;
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
 }
