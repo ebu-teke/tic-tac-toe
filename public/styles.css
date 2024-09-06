@@ -1,0 +1,33 @@
+body{
+    background-color: black;
+}
+.body{
+    text-align: center;
+    color: white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 80vh;
+}
+.body h1{
+    font-size: 60px;
+}
+.body p {
+    font-size: 30px;
+    margin-bottom: 50px;
+    margin-top: 0;
+}
+.board{
+    display: grid;
+    height: 500px;
+    width: 500px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px;
+    background-color: white;
+}
+.board div{
+    color: white;
+    background-color: black;
+}

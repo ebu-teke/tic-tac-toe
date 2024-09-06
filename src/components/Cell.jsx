@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Cell() {
+function Cell(props) {
   return (
-    <div>Cell</div>
+    <div onClick={()=>props.onClick()}>
+        {props.value}
+    </div>
   )
 }
 
