@@ -18,14 +18,14 @@ function Board(props) {
                 setTimeout(() => {
                     setCells(Array(9).fill(" "));
                     setPlayer("X")
-                }, 500);
+                }, 1000);
             }
             if (theCells.every(cell => cell !== " ")){
                 props.playerWon("draw");
                 setTimeout(() => {
                     setCells(Array(9).fill(" "));
                     setPlayer("X")
-                }, 500);
+                }, 1000);
             }
         }
 
